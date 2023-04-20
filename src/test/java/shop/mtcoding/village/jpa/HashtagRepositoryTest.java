@@ -70,7 +70,7 @@ public class HashtagRepositoryTest {
             Assertions.assertEquals(result.getHashtagName(), "파티룸");
 
             String hashtag = "음식점";
-            result.setHashtagName(Collections.singletonList(hashtag));
+            result.setHashtagName(hashtag);
             Hashtag merge = entityManager.merge(result);
 
             Assertions.assertEquals(merge.getHashtagName(), "음식점");

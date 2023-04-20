@@ -69,7 +69,7 @@ public class FacilityInfoRepositoryTest {
             Assertions.assertEquals(result.getFacilityName(), "카페");
 
             String facilityInfo = "매점";
-            result.setFacilityName(Collections.singletonList(facilityInfo));
+            result.setFacilityName(facilityInfo);
             FacilityInfo merge = entityManager.merge(result);
 
             Assertions.assertEquals(merge.getFacilityName(), "매점");

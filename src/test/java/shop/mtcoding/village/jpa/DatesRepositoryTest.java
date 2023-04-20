@@ -71,7 +71,7 @@ public class DatesRepositoryTest {
             Assertions.assertEquals(result.getDayOfWeekName(), "월요일");
 
             String day = "화요일";
-            result.setDayOfWeekName(Collections.singletonList(day));
+            result.setDayOfWeekName(day);
             Dates merge = entityManager.merge(result);
 
             Assertions.assertEquals(merge.getDayOfWeekName(), "화요일");
