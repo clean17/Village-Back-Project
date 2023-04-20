@@ -28,16 +28,16 @@ insert into review_tb (user_id, star_rating, content, image, like_count, created
 insert into review_tb (user_id, star_rating, content, image, like_count, created_at) values (3, 3, '그저 그랬어요', NULL, 2, now());
 
 insert into place_tb (user_id, title, address_id, tel, notice, place_introduction_info, max_people, price_per_hour, start_time, end_time)
-values (1, '좋은 공간', 1, '01012345678', '좋은 공간입니다.', '좋은 공간입니다. 이용해보세요!', 10, 5, NOW(), NOW());
+values (1, '좋은 공간', 1, '01012345678', '좋은 공간입니다.', '좋은 공간입니다. 이용해보세요!', 10, 5000, NOW(), NOW());
 insert into place_tb (user_id, title, address_id, tel, notice, place_introduction_info, max_people, price_per_hour, start_time, end_time)
-values (2, '멋진 공간', 2, '01012345679', '멋진 공간입니다.', '멋진 공간입니다. 이용해보세요!', 10, 4, NOW(), NOW());
+values (2, '멋진 공간', 2, '01012345679', '멋진 공간입니다.', '멋진 공간입니다. 이용해보세요!', 10, 4000, NOW(), NOW());
 insert into place_tb (user_id, title, address_id, tel, notice, place_introduction_info, max_people, price_per_hour, start_time, end_time)
-values (3, '편안한 공간', 3, '01012345680', '편안한 공간입니다.', '편안한 공간입니다. 이용해보세요!', 10, 3, NOW(), NOW());
+values (3, '편안한 공간', 3, '01012345680', '편안한 공간입니다.', '편안한 공간입니다. 이용해보세요!', 10000, 3, NOW(), NOW());
 
 
-insert into reservation_tb (user_id, place_id, date, start_time, end_time, people_num) values (1, 1, '2023-04-20', '2021-01-01T00:01', '2021-01-01T00:01', 2);
-insert into reservation_tb (user_id, place_id, date, start_time, end_time, people_num) values (2, 2, '2023-04-20', '2021-01-01T00:01', '2021-01-01T00:01', 3);
-insert into reservation_tb (user_id, place_id, date, start_time, end_time, people_num) values (1, 1, '2023-04-20', '2021-01-01T00:01', '2021-01-01T00:01', 4);
+insert into reservation_tb (user_id, place_id, date, start_time, end_time, people_num) values (1, 1, '2023-04-20', '2021-01-01T00:01', '2021-01-01T20:01', 2);
+insert into reservation_tb (user_id, place_id, date, start_time, end_time, people_num) values (2, 2, '2023-04-20', '2021-01-01T00:01', '2021-01-02T00:01', 3);
+insert into reservation_tb (user_id, place_id, date, start_time, end_time, people_num) values (1, 1, '2023-04-20', '2021-01-01T00:01', '2022-01-01T00:01', 4);
 
 insert into scrap_tb (user_id, place_id, count) values(1, 1, 3);
 insert into scrap_tb (user_id, place_id, count) values(1, 2, 5);
