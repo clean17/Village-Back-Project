@@ -24,32 +24,13 @@ import java.util.List;
 @Table(name = "reservation_tb")
 public class Reservation {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-    @Comment("예약 상태")
-    @Enumerated(EnumType.STRING)
-    private ReservationStatus status;
-
-
->>>>>>> cb21803 (Reservation save 완료)
-=======
->>>>>>> 4378292 (Place Refactor 완료)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Comment("예약 아이디")
     private Long id;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
-=======
-    @ManyToOne(cascade = CascadeType.PERSIST)
->>>>>>> cb21803 (Reservation save 완료)
-=======
-    @ManyToOne(fetch = FetchType.LAZY)
->>>>>>> bd01da0 (Reservation save 완료)
+
     @Comment("예약한 유저 정보")
     @JoinColumn(name = "user_id")
     private User user;
@@ -75,15 +56,7 @@ public class Reservation {
     @Comment("예약 상태")
     @Enumerated(EnumType.STRING)
     private ReservationStatus status;
-<<<<<<< HEAD
-=======
 
-<<<<<<< HEAD
-
->>>>>>> cb21803 (Reservation save 완료)
-
-=======
->>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
     @Builder
     public Reservation(User user, Place place, LocalDateTime date, LocalDateTime startTime, LocalDateTime endTime, Integer peopleNum, ReservationStatus status) {
         this.user = user;
@@ -95,38 +68,21 @@ public class Reservation {
         this.status = status;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     public Reservation(User user, LocalDateTime date, LocalDateTime startTime, LocalDateTime endTime, Integer peopleNum, ReservationStatus status) {
-=======
-    public Reservation(User user, LocalDateTime date, LocalDateTime startTime, LocalDateTime endTime, Integer peopleNum) {
->>>>>>> cb21803 (Reservation save 완료)
-=======
-    public Reservation(User user, LocalDateTime date, LocalDateTime startTime, LocalDateTime endTime, Integer peopleNum, ReservationStatus status) {
->>>>>>> a5386fa (알림 상황 진행중)
+
         this.user = user;
         this.date = date;
         this.startTime = startTime;
         this.endTime = endTime;
         this.peopleNum = peopleNum;
-<<<<<<< HEAD
-<<<<<<< HEAD
         this.status = status;
-=======
->>>>>>> cb21803 (Reservation save 완료)
-=======
-        this.status = status;
->>>>>>> a5386fa (알림 상황 진행중)
     }
 
     public ReservationSaveResponse toResponse() {
         User userName = new User();
         userName.setName(user.getName());
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a5386fa (알림 상황 진행중)
         return new ReservationSaveResponse(userName, peopleNum, date, startTime, endTime, status);
     }
 //
@@ -153,46 +109,8 @@ public class Reservation {
                 this.getStartTime(),
                 this.getEndTime()
         );
-=======
-        return new ReservationSaveResponse(userName, peopleNum, date, startTime, endTime);
+
     }
-<<<<<<< HEAD
 
-    public List<ReservationDTO> toDTOResponse() {
-        User userBuild = new User().builder().build();
-
-        Place placeBuild = new Place().builder().build();
-
-        Integer totalPrice = TotalPrice.calculateTotalPrice(Reservation.builder().build());
-
-        return new List<ReservationDTO>(userBuild, placeBuild, peopleNum, totalPrice, date, startTime, endTime);
->>>>>>> cb21803 (Reservation save 완료)
-=======
-//
-//    public ReservationDTO toDTOResponse() {
-//
-//        User userBuild = User.builder().build();
-//
-//        Place placeBuild = Place.builder().build();
-//
-//        Integer totalPrice = TotalPrice.calculateTotalPrice(Reservation.builder().build());
-//
-//        return new ReservationDTO(userBuild, placeBuild, peopleNum, totalPrice, date, startTime, endTime);
-//    }
-//
-    public ReservationDTO toDTOResponse() {
-        Integer totalPrice = TotalPrice.calculateTotalPrice(this);
-        System.out.println("디버그 : " + totalPrice);
-        return new ReservationDTO(
-                this.getUser(),
-                this.getPlace(),
-                this.getPeopleNum(),
-                totalPrice,
-                this.getDate(),
-                this.getStartTime(),
-                this.getEndTime()
-        );
->>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
-    }
 
 }

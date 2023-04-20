@@ -19,8 +19,6 @@ repositories {
 }
 
 dependencies {
-<<<<<<< HEAD
-<<<<<<< HEAD
 	// jsonconverter 사용 gradle
 	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.1'
 
@@ -28,23 +26,7 @@ dependencies {
 	implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.2.2'
 	implementation 'com.google.firebase:firebase-admin:9.1.1'
 //	implementation 'com.google.firebase:firebase-messaging:17.3.4'
-<<<<<<< HEAD
-=======
->>>>>>> cb21803 (Reservation save 완료)
-=======
 
-	// firebase 의존성
-<<<<<<< HEAD
-	implementation 'com.google.firebase:firebase-admin:8.1.0'
-	implementation 'com.squareup.okhttp3:okhttp:4.9.0'
->>>>>>> 1df70c2 (예약 완료 시 FCM 사용전 세팅완료)
-=======
-	implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.2.2'
-	implementation 'com.google.firebase:firebase-admin:9.1.1'
-	implementation 'com.google.firebase:firebase-messaging:17.3.4'
->>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
-=======
->>>>>>> 0a7ac65 (fcm 완료)
 	// modelmapper 사용 gradle
 	implementation 'org.modelmapper:modelmapper:2.4.4'
 

@@ -25,18 +25,7 @@ public class Dates {
 //    @JsonIgnore
     private Long id;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    @ElementCollection
-    @CollectionTable(name = "dates_tb", joinColumns = @JoinColumn(name = "dates_id"))
 
-
-
-
->>>>>>> cb21803 (Reservation save 완료)
-=======
->>>>>>> 4378292 (Place Refactor 완료)
     @Column(name = "day_of_week_name")
     @Comment("요일")
     private String dayOfWeekName;

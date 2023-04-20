@@ -44,18 +44,8 @@ public class PlaceRepositoryTest {
     @BeforeEach
     public void init() {
         em.createNativeQuery("ALTER TABLE place_tb ALTER COLUMN ID RESTART WITH 4L").executeUpdate();
-<<<<<<< HEAD
-<<<<<<< HEAD
 //        setUpByPlace("공간 제목","010-1245-7878", "공간 정보", "공간 소개",
 //                 5, 30, LocalDateTime.now(), LocalDateTime.now());
-=======
-        setUpByPlace("공간 제목","010-1245-7878", "공간 정보", "공간 소개",
-                 5, 30, LocalDateTime.now(), LocalDateTime.now());
->>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
-=======
-//        setUpByPlace("공간 제목","010-1245-7878", "공간 정보", "공간 소개",
-//                 5, 30, LocalDateTime.now(), LocalDateTime.now());
->>>>>>> 5a35c2a (refactoring 후 JPA 테스트 완료)
     }
 
     @Test
