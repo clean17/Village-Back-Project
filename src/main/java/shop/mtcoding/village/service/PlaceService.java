@@ -50,10 +50,18 @@ public class PlaceService {
             Optional<Place> byId = placeRepository.findById(2L);
             Place place1 = byId.get();
 
+<<<<<<< HEAD
             // 해시태그 insert
             List<Hashtag> hashtagList = new ArrayList<Hashtag>();
 
             System.out.println("디버그 : " + placeRequest.getHashtag().getHashtagDto());
+=======
+        // 카테고리 insert
+        Category saveCategory = categoryRepository.save(placeRequest.getCategory().toDEntity());
+
+        // 요일 날짜 insert
+        Dates saveDates = dateRepository.save(placeRequest.getDayOfWeek().toEntity());
+>>>>>>> 1df70c2 (예약 완료 시 FCM 사용전 세팅완료)
 
             for (HashtagSaveDTO.HashtagDto hash : placeRequest.getHashtag().getHashtagDto()) {
                 Hashtag save1 = hashtagRepository.save(hash.toEntity(hash.getHashtagName(), place1));
