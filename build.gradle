@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+<<<<<<< HEAD
 	// jsonconverter 사용 gradle
 	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.1'
 
@@ -26,6 +27,8 @@ dependencies {
 	implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.2.2'
 	implementation 'com.google.firebase:firebase-admin:9.1.1'
 //	implementation 'com.google.firebase:firebase-messaging:17.3.4'
+=======
+>>>>>>> cb21803 (Reservation save 완료)
 	// modelmapper 사용 gradle
 	implementation 'org.modelmapper:modelmapper:2.4.4'
 

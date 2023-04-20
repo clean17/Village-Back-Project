@@ -19,12 +19,34 @@ import shop.mtcoding.village.dto.ResponseDTO;
 @RestControllerAdvice
 public class MyExceptionAdvice {
 
+<<<<<<< HEAD
+=======
+
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<?> ex(Exception e){
+//        Sentry.captureException(e);
+//        String message = e.getMessage();
+//        ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(1, message, HttpStatus.BAD_REQUEST);
+//        return new ResponseEntity<>(responseDTO, HttpStatus.BAD_REQUEST);
+//    }
+<<<<<<< HEAD
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<?> ex(Exception e){
+        Sentry.captureException(e);
+        String message = e.getMessage();
+        ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(-1,400, message, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(responseDTO, HttpStatus.BAD_REQUEST);
+    }
+
+>>>>>>> cb21803 (Reservation save 완료)
     @ExceptionHandler(Exception400.class)
     public ResponseEntity<?> badRequest(Exception400 e) {
         ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(-1, 400, e.getMessage(), "Null");
         return new ResponseEntity<>(responseDTO, HttpStatus.BAD_REQUEST);
     }
 
+<<<<<<< HEAD
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<?> handleDataIntegrityViolationException(DataIntegrityViolationException e) {
         if (e.getCause() instanceof ConstraintViolationException) {
@@ -44,6 +66,42 @@ public class MyExceptionAdvice {
             ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(-1, 500, e.getMessage(), "Null");
             return new ResponseEntity<>(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
         }
+=======
+//    @ExceptionHandler(Exception400.class)
+//    @ResponseStatus(HttpStatus.BAD_REQUEST)
+//    public ResponseEntity<?> ex400(Exception e){
+//
+//        Sentry.captureException(e);
+//        String message = e.getMessage();
+//        ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(1, message, HttpStatus.BAD_REQUEST);
+//        return new ResponseEntity<>(responseDTO, HttpStatus.BAD_REQUEST);
+//
+//    }
+//
+////    @ExceptionHandler(Exception400.class)
+////    @ResponseStatus(HttpStatus.BAD_REQUEST)
+////    public ResponseEntity<?> ex401(MyValidationException e){
+////        String errMsg = e.getErroMap().toString();
+////        String devideMsg = errMsg.split("=")[1].split(",")[0].split("}")[0];
+////        return new ResponseEntity<>(new ResponseDTO<>(-1,devideMsg,null), HttpStatus.BAD_REQUEST);
+////    }
+//
+//    @ExceptionHandler(MyValidationException.class)
+//    public ResponseEntity<?> error(MyValidationException e){
+//        Sentry.captureException(e);
+//        String errMsg = e.getErroMap().toString();
+//        String devideMsg = errMsg.split("=")[1].split(",")[0].split("}")[0];
+//        return new ResponseEntity<>(new ResponseDTO<>(-1,devideMsg,null), HttpStatus.BAD_REQUEST);
+//    }
+<<<<<<< HEAD
+
+    @ExceptionHandler(MyValidationException.class)
+    public ResponseEntity<?> error(MyValidationException e){
+        Sentry.captureException(e);
+        String errMsg = e.getErroMap().toString();
+        String devideMsg = errMsg.split("=")[1].split(",")[0].split("}")[0];
+        return new ResponseEntity<>(new ResponseDTO<>(-1,400,devideMsg,null), HttpStatus.BAD_REQUEST);
+>>>>>>> cb21803 (Reservation save 완료)
     }
 
 
