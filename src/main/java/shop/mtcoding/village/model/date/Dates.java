@@ -26,8 +26,8 @@ public class Dates {
     private Long id;
 
     @ElementCollection
-    @CollectionTable(name = "day_of_week_name", joinColumns = @JoinColumn(name = "dates_id"))
-    @Column(name = "dayOfWeekName")
+    @CollectionTable(name = "dates_tb", joinColumns = @JoinColumn(name = "dates_id")) // 콜렉션형태를 dates_tb에 dates_id와 조인해주는 역할
+    @Column(name = "day_of_week_name")
     @Comment("요일")
     private List<String> dayOfWeekName;
 

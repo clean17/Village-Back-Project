@@ -60,9 +60,9 @@ insert into chat_tb (user_id, send, chat_room_id, created_at) values (2, '서울
 -- insert into payment_tb (user_id, place_id, reservation_id, status, total_price) values (1, 1, 1, '결제대기', 20000);
 -- insert into payment_tb (user_id, place_id, reservation_id, status, total_price) values (1, 1, 1, '환불완료', 10000);
 --
-insert into dates_tb (day_of_week_name) values ('월요일');
-insert into dates_tb (day_of_week_name) values ('화요일');
-insert into dates_tb (day_of_week_name) values ('수요일');
+insert into dates_tb (day_of_week_name, dates_id, place_id) values ('월요일,화요일,수요일,목요일', 1, 1);
+insert into dates_tb (day_of_week_name, dates_id, place_id) values ('월요일,목요일,금요일,토요일', 2, 1);
+insert into dates_tb (day_of_week_name, dates_id, place_id) values ('수요일', 2, 2);
 
 -- insert into notice_tb (user_id, place_id, payment_id, content, status) values (1, 1, 1, '내용1', 'WAIT');
 -- insert into notice_tb (user_id, place_id, payment_id, content, status) values (2, 2, 2, '내용2', 'WAIT');
