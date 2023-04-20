@@ -42,10 +42,14 @@ public class Reservation {
     private Long id;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 =======
     @ManyToOne(cascade = CascadeType.PERSIST)
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+    @ManyToOne(fetch = FetchType.LAZY)
+>>>>>>> bd01da0 (Reservation save 완료)
     @Comment("예약한 유저 정보")
     @JoinColumn(name = "user_id")
     private User user;

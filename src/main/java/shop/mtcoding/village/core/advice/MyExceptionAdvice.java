@@ -3,11 +3,14 @@
 package shop.mtcoding.village.core.advice;
 
 import org.hibernate.exception.ConstraintViolationException;
+<<<<<<< HEAD
 import org.springframework.dao.DataIntegrityViolationException;
 =======
 package shop.mtcoding.village.core.advice;
 
 >>>>>>> c391c21 (Reservation Refactor 완료)
+=======
+>>>>>>> bd01da0 (Reservation save 완료)
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
