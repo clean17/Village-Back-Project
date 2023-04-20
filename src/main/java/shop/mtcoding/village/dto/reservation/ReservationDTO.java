@@ -27,12 +27,18 @@ public class ReservationDTO {
     private LocalDateTime endTime;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
     public ReservationDTO() {
 
     }
 
+<<<<<<< HEAD
 =======
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+>>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
     public ReservationDTO(User user, Place place, Integer peopleNum, Integer totalPrice, LocalDateTime date, LocalDateTime startTime, LocalDateTime endTime) {
         this.user = user;
         this.place = place;

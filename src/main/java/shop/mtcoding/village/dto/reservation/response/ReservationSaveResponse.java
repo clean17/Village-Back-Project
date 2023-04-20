@@ -7,8 +7,11 @@ import shop.mtcoding.village.util.status.ReservationStatus;
 
 =======
 
+<<<<<<< HEAD
 import javax.validation.constraints.NotBlank;
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+>>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
 import java.time.LocalDateTime;
 
 @Getter

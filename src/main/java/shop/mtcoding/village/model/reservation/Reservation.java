@@ -71,9 +71,12 @@ public class Reservation {
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 
 >>>>>>> cb21803 (Reservation save 완료)
 
+=======
+>>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
     @Builder
     public Reservation(User user, Place place, LocalDateTime date, LocalDateTime startTime, LocalDateTime endTime, Integer peopleNum, ReservationStatus status) {
         this.user = user;
@@ -135,6 +138,7 @@ public class Reservation {
 =======
         return new ReservationSaveResponse(userName, peopleNum, date, startTime, endTime);
     }
+<<<<<<< HEAD
 
     public List<ReservationDTO> toDTOResponse() {
         User userBuild = new User().builder().build();
@@ -145,6 +149,32 @@ public class Reservation {
 
         return new List<ReservationDTO>(userBuild, placeBuild, peopleNum, totalPrice, date, startTime, endTime);
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+//
+//    public ReservationDTO toDTOResponse() {
+//
+//        User userBuild = User.builder().build();
+//
+//        Place placeBuild = Place.builder().build();
+//
+//        Integer totalPrice = TotalPrice.calculateTotalPrice(Reservation.builder().build());
+//
+//        return new ReservationDTO(userBuild, placeBuild, peopleNum, totalPrice, date, startTime, endTime);
+//    }
+//
+    public ReservationDTO toDTOResponse() {
+        Integer totalPrice = TotalPrice.calculateTotalPrice(this);
+        System.out.println("디버그 : " + totalPrice);
+        return new ReservationDTO(
+                this.getUser(),
+                this.getPlace(),
+                this.getPeopleNum(),
+                totalPrice,
+                this.getDate(),
+                this.getStartTime(),
+                this.getEndTime()
+        );
+>>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
     }
 
 }

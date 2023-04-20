@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import shop.mtcoding.village.core.exception.Exception400;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import shop.mtcoding.village.core.exception.MyConstException;
 import shop.mtcoding.village.core.firebase.FirebaseCloudMessageService;
 import shop.mtcoding.village.core.firebase.RequestDTO;
@@ -32,11 +33,15 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 =======
+=======
+import shop.mtcoding.village.core.exception.MyConstException;
+>>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
 import shop.mtcoding.village.dto.ResponseDTO;
 import shop.mtcoding.village.dto.reservation.ReservationDTO;
 import shop.mtcoding.village.dto.reservation.request.ReservationSaveRequest;
 import shop.mtcoding.village.model.reservation.Reservation;
 import shop.mtcoding.village.model.reservation.ReservationRepository;
+import shop.mtcoding.village.notFoundConst.ReservationConst;
 import shop.mtcoding.village.service.ReservationService;
 
 import javax.validation.Valid;
@@ -68,7 +73,7 @@ public class ReservationController {
         return new ResponseEntity<>(new ResponseDTO<>(1, 200, "예약내역 조회완료", allReservation), HttpStatus.OK);
 =======
     @GetMapping
-    public ResponseEntity<?> getReservation(ReservationDTO reservationDTO){
+    public ResponseEntity<?> getReservation(){
 
         List<Reservation> allReservation = reservationRepository.findAll();
 
@@ -76,13 +81,18 @@ public class ReservationController {
                 .map(reservation -> new ModelMapper().map(reservation, ReservationDTO.class))
                 .collect(Collectors.toList());
 
+<<<<<<< HEAD
         return new ResponseEntity<>(new ResponseDTO<>(1, "예약내역 조회완료",allReservationDTO), HttpStatus.OK);
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+        return new ResponseEntity<>(new ResponseDTO<>(1, "예약내역 조회완료",allReservation), HttpStatus.OK);
+>>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<?> getById(@PathVariable Long id) {
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         Optional<Reservation> optionalUser = reservationRepository.findById(id);
         System.out.println("디버그 : " + optionalUser);
@@ -97,6 +107,16 @@ public class ReservationController {
 
         return new ResponseEntity<>(new ResponseDTO<>(1, "유저 예약내역 조회완료", userId), HttpStatus.OK);
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+        Optional<Reservation> optionalUser = reservationRepository.findById(id);
+        System.out.println("디버그 : " + optionalUser);
+
+        if (!optionalUser.isPresent()) {
+            throw new MyConstException(ReservationConst.notFound);
+        }
+
+        return new ResponseEntity<>(new ResponseDTO<>(1, "유저 예약내역 조회완료", optionalUser.get().toDTOResponse()), HttpStatus.OK);
+>>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
     }
 
     @PostMapping
