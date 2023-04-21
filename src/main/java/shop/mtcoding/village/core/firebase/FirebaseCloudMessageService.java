@@ -18,6 +18,7 @@ public class FirebaseCloudMessageService {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     private final String API_URL = "https://fcm.googleapis.com/v1/projects/fcmgood-41ac1/messages:send";
 =======
     private final String API_URL = "https://fcm.googleapis.com/v1/projects/village/messages:send";
@@ -25,6 +26,9 @@ public class FirebaseCloudMessageService {
 =======
     private final String API_URL = "https://fcm.googleapis.com/v1/projects/village-5b9d4/messages:send";
 >>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
+=======
+    private final String API_URL = "https://fcm.googleapis.com/v1/projects/fcmgood-41ac1/messages:send";
+>>>>>>> 8bed703 (FMC 이용 하여 알림 테스트 완료)
     private final ObjectMapper objectMapper;
 
     public void sendMessageTo(String targetToken, String title, String body) throws IOException {
@@ -71,6 +75,7 @@ public class FirebaseCloudMessageService {
     private String getAccessToken() throws IOException {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         String firebaseConfigPath = "/firebase/fcmgood-41ac1-f214841e94d2.json";
 =======
         String firebaseConfigPath = "/firebase/village-2c2c1-firebase-adminsdk-3iun2-94cdda073d.json";
@@ -78,6 +83,9 @@ public class FirebaseCloudMessageService {
 =======
         String firebaseConfigPath = "/firebase/village-5b9d4-firebase-adminsdk-hqgb0-45e01a6b09.json";
 >>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
+=======
+        String firebaseConfigPath = "/firebase/fcmgood-41ac1-f214841e94d2.json";
+>>>>>>> 8bed703 (FMC 이용 하여 알림 테스트 완료)
 
         GoogleCredentials googleCredentials = GoogleCredentials
                 .fromStream(new ClassPathResource(firebaseConfigPath).getInputStream())
