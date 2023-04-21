@@ -29,7 +29,7 @@ public class Hashtag {
     @Comment("해시태그 이름")
     @ElementCollection
     @CollectionTable(name = "hashtag_name", joinColumns = @JoinColumn(name = "hashtag_id"))
-    @Column(name = "name")
+    @Column(name = "hashtag_name")
     private List<String> hashtagName;
 
     @Comment("공간의 아이디")

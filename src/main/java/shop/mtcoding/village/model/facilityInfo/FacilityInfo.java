@@ -28,7 +28,7 @@ public class FacilityInfo {
     @Comment("편의시설 이름")
     @ElementCollection
     @CollectionTable(name = "facility_name", joinColumns = @JoinColumn(name = "facility_id"))
-    @Column(name = "name")
+    @Column(name = "facility_name")
     private List<String> facilityName;
 
     @Comment("공간의 아이디")
