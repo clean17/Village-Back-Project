@@ -1,5 +1,9 @@
 package shop.mtcoding.village.core.firebase;
 
+<<<<<<< HEAD
+=======
+import com.google.firebase.messaging.FirebaseMessaging;
+>>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,6 +47,9 @@ public class FcmController {
     }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
 }

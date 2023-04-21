@@ -70,7 +70,7 @@ public class HashtagRepositoryTest {
             Assertions.assertEquals(result.getHashtagName(), "파티룸");
 
             String hashtag = "음식점";
-            result.setHashtagName(hashtag);
+            result.setHashtagName(Collections.singletonList(hashtag));
             Hashtag merge = entityManager.merge(result);
 
             Assertions.assertEquals(merge.getHashtagName(), "음식점");
@@ -110,11 +110,33 @@ public class HashtagRepositoryTest {
         Review review = new Review().builder().user(user).starRating(5).content("내용").image("이미지").likeCount(3).build();
         this.entityManager.persist(review);
 
+<<<<<<< HEAD
+=======
+        Category category = new Category().builder().categoryName("이름").build();
+        this.entityManager.persist(category);
+
+        Dates dates = new Dates().builder().dayOfWeekName(Collections.singletonList("월요일")).build();
+        this.entityManager.persist(dates);
+
+        FacilityInfo facilityName = new FacilityInfo().builder().facilityName(Collections.singletonList("화장실")).build();
+        this.entityManager.persist(facilityName);
+
+        Hashtag hashtagName = new Hashtag().builder().hashtagName(Collections.singletonList("연습실")).build();
+        this.entityManager.persist(hashtagName);
+
+
+>>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
         Place place = new Place().builder().title("제목").address(address).tel("123123").placeIntroductionInfo("공간정보").notice("공간소개")
                 .startTime(LocalTime.from(LocalDateTime.now())).endTime(LocalTime.from(LocalDateTime.now())).build();
         this.entityManager.persist(place);
 
+<<<<<<< HEAD
         Hashtag hashtagName = new Hashtag().builder().hashtagName(hashtagName1).build();
+=======
+        dates.setPlace(place);
+        hashtagName.setPlace(place);
+
+>>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
         return this.entityManager.persist(hashtagName);
     }
 }

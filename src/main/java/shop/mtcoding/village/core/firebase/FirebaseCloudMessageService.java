@@ -17,10 +17,14 @@ import java.util.List;
 public class FirebaseCloudMessageService {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     private final String API_URL = "https://fcm.googleapis.com/v1/projects/fcmgood-41ac1/messages:send";
 =======
     private final String API_URL = "https://fcm.googleapis.com/v1/projects/village/messages:send";
 >>>>>>> 1df70c2 (예약 완료 시 FCM 사용전 세팅완료)
+=======
+    private final String API_URL = "https://fcm.googleapis.com/v1/projects/village-5b9d4/messages:send";
+>>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
     private final ObjectMapper objectMapper;
 
     public void sendMessageTo(String targetToken, String title, String body) throws IOException {
@@ -66,10 +70,14 @@ public class FirebaseCloudMessageService {
 
     private String getAccessToken() throws IOException {
 <<<<<<< HEAD
+<<<<<<< HEAD
         String firebaseConfigPath = "/firebase/fcmgood-41ac1-f214841e94d2.json";
 =======
         String firebaseConfigPath = "/firebase/village-2c2c1-firebase-adminsdk-3iun2-94cdda073d.json";
 >>>>>>> 1df70c2 (예약 완료 시 FCM 사용전 세팅완료)
+=======
+        String firebaseConfigPath = "/firebase/village-5b9d4-firebase-adminsdk-hqgb0-45e01a6b09.json";
+>>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
 
         GoogleCredentials googleCredentials = GoogleCredentials
                 .fromStream(new ClassPathResource(firebaseConfigPath).getInputStream())

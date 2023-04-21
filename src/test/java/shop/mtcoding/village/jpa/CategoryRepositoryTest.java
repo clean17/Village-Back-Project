@@ -47,7 +47,11 @@ public class CategoryRepositoryTest {
         Assertions.assertNotEquals(categories.size(), 0);
 
         Category category = categories.get(0);
+<<<<<<< HEAD
         Assertions.assertEquals(category.getCategoryName(), "연습실");
+=======
+        Assertions.assertEquals(category.getCategoryName(), "운동시설");
+>>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
     }
 
     @Test

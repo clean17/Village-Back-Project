@@ -41,9 +41,26 @@ public class UserService {
             User userPS = userRepository.save(joinDTO.toEntity());
 
 
+<<<<<<< HEAD
             return new UserResponse.JoinDTO(userPS);
         } catch (Exception500 e) {
             throw new Exception500("회원가입 오류" + e.getMessage());
+=======
+        return new UserResponse.JoinDTO(userPS);
+    }
+    @Transactional
+    public String 로그인(UserRequest.LoginDTO loginDTO) {
+        Optional<User> userOP = userRepository.findByEmail(loginDTO.getEmail());
+        if(userOP.isPresent()){
+            User userPS = userOP.get();
+            if(passwordEncoder.matches(loginDTO.getPassword(),   userPS.getPassword())){
+                String jwt = MyJwtProvider.create(userPS);
+                return jwt;
+            }
+            throw new RuntimeException("패스워드가 틀렸습니다.");
+        }else{
+            throw new RuntimeException("존재하지않는 이메일입니다.");
+>>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
         }
 
 
