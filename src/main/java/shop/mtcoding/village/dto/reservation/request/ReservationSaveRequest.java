@@ -1,6 +1,7 @@
 package shop.mtcoding.village.dto.reservation.request;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import lombok.*;
 import shop.mtcoding.village.core.firebase.RequestDTO;
 import shop.mtcoding.village.model.reservation.Reservation;
@@ -14,6 +15,10 @@ import java.time.LocalTime;
 =======
 import lombok.Getter;
 import lombok.ToString;
+=======
+import lombok.*;
+import shop.mtcoding.village.core.firebase.RequestDTO;
+>>>>>>> 0a7ac65 (fcm 완료)
 import shop.mtcoding.village.model.reservation.Reservation;
 import shop.mtcoding.village.model.user.User;
 
@@ -61,7 +66,11 @@ public class ReservationSaveRequest {
 //    @NotBlank(message = "끝 시간을 입력해주세요.")
     private LocalDateTime endTime;
 
+<<<<<<< HEAD
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+
+>>>>>>> 0a7ac65 (fcm 완료)
     public Reservation toEntity() {
         User user = new User();
         user.setName(userName);

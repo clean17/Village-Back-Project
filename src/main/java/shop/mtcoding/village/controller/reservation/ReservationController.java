@@ -3,9 +3,12 @@ package shop.mtcoding.village.controller.reservation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import org.modelmapper.ModelMapper;
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+>>>>>>> 0a7ac65 (fcm 완료)
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -40,7 +43,6 @@ import shop.mtcoding.village.core.exception.MyConstException;
 =======
 >>>>>>> 1df70c2 (예약 완료 시 FCM 사용전 세팅완료)
 import shop.mtcoding.village.dto.ResponseDTO;
-import shop.mtcoding.village.dto.reservation.ReservationDTO;
 import shop.mtcoding.village.dto.reservation.request.ReservationSaveRequest;
 import shop.mtcoding.village.model.reservation.Reservation;
 import shop.mtcoding.village.model.reservation.ReservationRepository;
@@ -51,8 +53,11 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+<<<<<<< HEAD
 import java.util.stream.Collectors;
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+>>>>>>> 0a7ac65 (fcm 완료)
 
 @RestController
 @RequestMapping("/reservation")
@@ -86,16 +91,20 @@ public class ReservationController {
 
         List<Reservation> allReservation = reservationRepository.findAll();
 
-        List<ReservationDTO> allReservationDTO = allReservation.stream()
-                .map(reservation -> new ModelMapper().map(reservation, ReservationDTO.class))
-                .collect(Collectors.toList());
+//        List<ReservationDTO> allReservationDTO = allReservation.stream()
+//                .map(reservation -> new ModelMapper().map(reservation, ReservationDTO.class))
+//                .collect(Collectors.toList());
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         return new ResponseEntity<>(new ResponseDTO<>(1, "예약내역 조회완료",allReservationDTO), HttpStatus.OK);
 >>>>>>> cb21803 (Reservation save 완료)
 =======
         return new ResponseEntity<>(new ResponseDTO<>(1, "예약내역 조회완료",allReservation), HttpStatus.OK);
 >>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
+=======
+        return new ResponseEntity<>(new ResponseDTO<>(200, "예약내역 조회완료", allReservation), HttpStatus.OK);
+>>>>>>> 0a7ac65 (fcm 완료)
     }
 
     @GetMapping("/{id}")
@@ -124,8 +133,12 @@ public class ReservationController {
             throw new MyConstException(ReservationConst.notFound);
         }
 
+<<<<<<< HEAD
         return new ResponseEntity<>(new ResponseDTO<>(1, "유저 예약내역 조회완료", optionalUser.get().toDTOResponse()), HttpStatus.OK);
 >>>>>>> 81f6726 (Reservation 메인 페이지 , 상세 페이지 get 완료)
+=======
+        return new ResponseEntity<>(new ResponseDTO<>(200, "유저 예약내역 조회완료", optionalUser.get().toDTOResponse()), HttpStatus.OK);
+>>>>>>> 0a7ac65 (fcm 완료)
     }
 
     @PostMapping
@@ -168,7 +181,7 @@ public class ReservationController {
 
 =======
             @Valid @RequestBody ReservationSaveRequest reservationSaveRequest, BindingResult result
-            ) {
+            ) throws IOException {
 
         if (result.hasErrors()) {
             throw new Exception400(result.getAllErrors().get(0).getDefaultMessage());
@@ -176,12 +189,19 @@ public class ReservationController {
 
         var saveReservation = reservationService.예약신청(reservationSaveRequest);
 
-        return new ResponseEntity<>(new ResponseDTO<>(1, "예약 신청 완료", saveReservation.toResponse()), HttpStatus.OK);
+        RequestDTO requestDTO = new RequestDTO("예약신청", reservationSaveRequest.getUserName()+ "님이 예약신청을 했습니다", "dVimDFTAQJCHMrFDJD2W18:APA91bFef_eC8HUP_PPjtGnt3_1hJR4m-BJMDr2PSfFqA9eNtnYh4XTOqCStmPKnWgv6XDCkzur7kCrxlvghvtTPttD58zYKrz8OhkZn8Pc40vO9YCRIpJhHPaMT3wEMEkF7l7TCZkDx");
+        firebaseCloudMessageService.sendMessageTo(
+                requestDTO.getTargetToken(),
+                requestDTO.getTitle(),
+                requestDTO.getBody());
+
+        return new ResponseEntity<>(new ResponseDTO<>(200, "예약 신청 완료", saveReservation.toResponse()), HttpStatus.OK);
     }
 <<<<<<< HEAD
 >>>>>>> cb21803 (Reservation save 완료)
 =======
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     // 푸쉬 알림 보내는 핸들러
     @PostMapping("/api/fcm")
@@ -236,4 +256,6 @@ public class ReservationController {
 //        return ResponseEntity.ok().build();
 //    }
 >>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
+=======
+>>>>>>> 0a7ac65 (fcm 완료)
 }

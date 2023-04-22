@@ -47,11 +47,16 @@ public class FirebaseCloudMessageService {
                 .execute();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         System.out.println("디버그 : " + response);
 
 =======
         System.out.println(response.body().string());
 >>>>>>> 1df70c2 (예약 완료 시 FCM 사용전 세팅완료)
+=======
+        System.out.println("디버그 : " + response);
+
+>>>>>>> 0a7ac65 (fcm 완료)
     }
 
     private String makeMessage(String targetToken, String title, String body) throws JsonProcessingException {
