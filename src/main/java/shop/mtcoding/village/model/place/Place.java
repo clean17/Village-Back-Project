@@ -113,7 +113,7 @@ public class Place {
 
         List<String> hashtagName = hashtag.getHashtagName();
 
-        List<String> facilityName = facilityInfo.getFacilityName();
+        String facilityName = facilityInfo.getFacilityName();
 
         String categoryName = category.getCategoryName();
 
@@ -129,7 +129,7 @@ public class Place {
 
         List<String> hashtagName = hashtag.getHashtagName();
 
-        List<String> facilityName = facilityInfo.getFacilityName();
+        String facilityName = facilityInfo.getFacilityName();
 
         String categoryName = category.getCategoryName();
 

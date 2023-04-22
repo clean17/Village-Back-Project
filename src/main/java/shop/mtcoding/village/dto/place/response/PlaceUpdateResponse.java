@@ -34,12 +34,12 @@ public class PlaceUpdateResponse {
 
     private List<String> hashtagName;
 
-    private List<String> facilityName;
+    private String facilityName;
 
     private String categoryName;
 
     public PlaceUpdateResponse(String title, Address placeAddress, String tel, String startTime, String endTime, String placeIntroductionInfo, Integer maxPeople
-            , Integer pricePerHour, String notice, List<String> dayOfWeek, List<String> hashtagName, List<String> facilityName, String categoryName) {
+            , Integer pricePerHour, String notice, List<String> dayOfWeek, List<String> hashtagName, String facilityName, String categoryName) {
         this.title = title;
         this.placeAddress = placeAddress;
         this.tel = tel;
