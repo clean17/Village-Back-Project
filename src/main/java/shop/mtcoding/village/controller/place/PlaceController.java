@@ -57,9 +57,7 @@ public class PlaceController {
             throw new Exception400(result.getAllErrors().get(0).getDefaultMessage());
         }
 
-
         var save = placeService.공간등록하기(placeSaveRequest);
-
 
         return new ResponseEntity<>(new ResponseDTO<>(200, "공간 데이터 등록 완료", save), HttpStatus.OK);
     }
