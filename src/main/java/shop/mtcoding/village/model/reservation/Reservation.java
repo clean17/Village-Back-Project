@@ -89,19 +89,27 @@ public class Reservation {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public Reservation(User user, LocalDateTime date, LocalDateTime startTime, LocalDateTime endTime, Integer peopleNum, ReservationStatus status) {
 =======
     public Reservation(User user, LocalDateTime date, LocalDateTime startTime, LocalDateTime endTime, Integer peopleNum) {
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+    public Reservation(User user, LocalDateTime date, LocalDateTime startTime, LocalDateTime endTime, Integer peopleNum, ReservationStatus status) {
+>>>>>>> a5386fa (알림 상황 진행중)
         this.user = user;
         this.date = date;
         this.startTime = startTime;
         this.endTime = endTime;
         this.peopleNum = peopleNum;
 <<<<<<< HEAD
+<<<<<<< HEAD
         this.status = status;
 =======
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+        this.status = status;
+>>>>>>> a5386fa (알림 상황 진행중)
     }
 
     public ReservationSaveResponse toResponse() {
@@ -109,6 +117,9 @@ public class Reservation {
         userName.setName(user.getName());
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a5386fa (알림 상황 진행중)
         return new ReservationSaveResponse(userName, peopleNum, date, startTime, endTime, status);
     }
 //

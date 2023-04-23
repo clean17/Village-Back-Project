@@ -37,7 +37,6 @@ public class ReservationService {
 
     private final ReservationRepository reservationRepository;
 
-
     @Transactional
     public Reservation 예약신청(ReservationSaveRequest reservationSaveRequest) {
 <<<<<<< HEAD

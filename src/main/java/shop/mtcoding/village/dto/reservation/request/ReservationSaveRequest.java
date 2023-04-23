@@ -7,6 +7,7 @@ import shop.mtcoding.village.core.firebase.RequestDTO;
 import shop.mtcoding.village.model.reservation.Reservation;
 import shop.mtcoding.village.model.user.User;
 import shop.mtcoding.village.util.status.ReservationStatus;
+<<<<<<< HEAD
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -21,6 +22,8 @@ import shop.mtcoding.village.core.firebase.RequestDTO;
 >>>>>>> 0a7ac65 (fcm 완료)
 import shop.mtcoding.village.model.reservation.Reservation;
 import shop.mtcoding.village.model.user.User;
+=======
+>>>>>>> a5386fa (알림 상황 진행중)
 
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
@@ -67,8 +70,13 @@ public class ReservationSaveRequest {
     private LocalDateTime endTime;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> cb21803 (Reservation save 완료)
 =======
+=======
+    private ReservationStatus reservationStatus;
+
+>>>>>>> a5386fa (알림 상황 진행중)
 
 >>>>>>> 0a7ac65 (fcm 완료)
     public Reservation toEntity() {
@@ -81,11 +89,16 @@ public class ReservationSaveRequest {
         reservation.setStartTime(startTime);
         reservation.setEndTime(endTime);
 <<<<<<< HEAD
+<<<<<<< HEAD
         reservation.setStatus(reservationStatus);
         return new Reservation(user, date, startTime, endTime, peopleNum, reservationStatus);
 =======
         return new Reservation(user, date, startTime, endTime, peopleNum);
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+        reservation.setStatus(reservationStatus);
+        return new Reservation(user, date, startTime, endTime, peopleNum, reservationStatus);
+>>>>>>> a5386fa (알림 상황 진행중)
     }
 
 }

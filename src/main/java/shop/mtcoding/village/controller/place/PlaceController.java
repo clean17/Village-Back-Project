@@ -62,8 +62,12 @@ public class PlaceController {
         return new ResponseEntity<>(new ResponseDTO<>(1, 200, "공간 데이터 등록 완료", save), HttpStatus.OK);
 =======
 
+<<<<<<< HEAD
         return new ResponseEntity<>(new ResponseDTO<>(1, "공간 데이터 등록 완료", save), HttpStatus.OK);
 >>>>>>> 0a7ac65 (fcm 완료)
+=======
+        return new ResponseEntity<>(new ResponseDTO<>(200, "공간 데이터 등록 완료", save), HttpStatus.OK);
+>>>>>>> a5386fa (알림 상황 진행중)
     }
 
     @PutMapping
@@ -76,10 +80,14 @@ public class PlaceController {
         var update = placeService.공간수정하기(placeUpdateRequest);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         return new ResponseEntity<>(new ResponseDTO<>(1, 200, "공간 데이터 수정 완료", update), HttpStatus.OK);
 =======
         return new ResponseEntity<>(new ResponseDTO<>(1, "공간 데이터 수정 완료", update), HttpStatus.OK);
 >>>>>>> 0a7ac65 (fcm 완료)
+=======
+        return new ResponseEntity<>(new ResponseDTO<>(200, "공간 데이터 수정 완료", update), HttpStatus.OK);
+>>>>>>> a5386fa (알림 상황 진행중)
     }
 
     @DeleteMapping("/{id}")
@@ -94,10 +102,14 @@ public class PlaceController {
         placeService.공간삭제하기(optionalPlace.get());
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         return new ResponseEntity<>(new ResponseDTO<>(1, 200, "공간 데이터 삭제 완료", null), HttpStatus.OK);
 =======
         return new ResponseEntity<>(new ResponseDTO<>(1, "공간 데이터 삭제 완료", null), HttpStatus.OK);
 >>>>>>> 0a7ac65 (fcm 완료)
+=======
+        return new ResponseEntity<>(new ResponseDTO<>(200, "공간 데이터 삭제 완료", null), HttpStatus.OK);
+>>>>>>> a5386fa (알림 상황 진행중)
     }
 
 }
