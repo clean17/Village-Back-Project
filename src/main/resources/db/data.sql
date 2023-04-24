@@ -12,14 +12,12 @@ values ('부산 부산진구 중앙대로 688 한준빌딩 12층', '부산 사�
 insert into address_tb(road_full_addr, sgg_nm, zip_no, lat, lng)
 values ('부산 부산진구 중앙대로 688 한준빌딩 22층', '부산 사하구', '27296', '412', '125');
 
-
 insert into account_tb(user_id, account_num)
 values (1, '123456-01-123456');
 insert into account_tb(user_id, account_num)
 values (1, '123434-01-123354');
 insert into account_tb(user_id, account_num)
 values (1, '333456-01-111244');
-
 
 
 insert into place_tb (user_id, title, address_id, tel, notice, place_introduction_info, max_people, max_parking,
@@ -43,12 +41,14 @@ values (2, 2, 4, '조금 아쉬운 부분도 있지만 전체적으로 만족스
 insert into review_tb (user_id, place_id, star_rating, content, image, like_count, created_at)
 values (3, 3, 3, '그저 그랬어요', NULL, 2, now());
 
+
 insert into facility_info_tb (facility_name, facility_info_id, place_id)
 values ('카페', 1, 1);
 insert into facility_info_tb (facility_name, facility_info_id, place_id)
 values ('화장실', 2, 2);
 insert into facility_info_tb (facility_name, facility_info_id, place_id)
 values ('주차장', 3, 3);
+
 
 
 insert into category_tb (category_name, place_id)
@@ -86,6 +86,7 @@ insert into search_tb (user_id, place_id, keyword)
 values (2, 2, '스터디룸');
 insert into search_tb (user_id, place_id, keyword)
 values (3, 3, '커피숍');
+
 
 insert into chat_tb (user_id, send, chat_room_id, created_at)
 values (1, '안녕하세요!', 1, NOW());
@@ -125,5 +126,6 @@ insert into hashtag_tb (hashtag_name, hashtag_id, place_id)
 values ('쇼핑몰촬영, 파티룸, 촬영스튜디오', 2, 2);
 insert into hashtag_tb (hashtag_name, hashtag_id, place_id)
 values ('부산연습실', 3, 3);
+
 
 commit;

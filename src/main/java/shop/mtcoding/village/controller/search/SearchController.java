@@ -1,5 +1,6 @@
 package shop.mtcoding.village.controller.search;
 
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,5 +23,4 @@ public class SearchController {
         List<SearchList> searchLists = searchService.searchPlacesByKeyword(keyword);
         return ResponseEntity.ok().body(searchLists);
     }
-
 }

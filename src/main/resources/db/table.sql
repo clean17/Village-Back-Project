@@ -8,6 +8,20 @@ create table user_tb (
     profile varchar(255),
     created_at timestamp
 );
+create table place_tb (
+    id int primary key AUTO_INCREMENT,
+    user_id int,
+    title varchar(255),
+    address_id int,
+    tel varchar(255),
+    notice varchar,
+    place_introduction_info varchar,
+    max_people int,
+    price_per_hour int,
+    start_time timestamp,
+    end_time timestamp,
+    category_id int
+);
 
 
 
