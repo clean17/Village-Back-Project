@@ -26,10 +26,10 @@ public class FacilityInfo {
     private Long id;
 
     @Comment("편의시설 이름")
-    @ElementCollection
-    @CollectionTable(name = "facility_name", joinColumns = @JoinColumn(name = "facility_id"))
-    @Column(name = "name")
-    private List<String> facilityName;
+//    @ElementCollection
+//    @CollectionTable(name = "facility_name", joinColumns = @JoinColumn(name = "facility_id"))
+    @Column(name = "facility_name")
+    private String facilityName;
 
     @Comment("공간의 아이디")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -39,7 +39,7 @@ public class FacilityInfo {
     private Place place;
 
     @Builder
-    public FacilityInfo(List<String> facilityName, Place place) {
+    public FacilityInfo(String facilityName, Place place) {
         this.facilityName = facilityName;
         this.place = place;
     }

@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Table(name = "user_tb")
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 public class User {
     @Id
@@ -24,6 +25,7 @@ public class User {
     private String password;
 
     @Comment("유저 이메일")
+    @Column(unique = true)
     private String email;
 
     @Comment("유저 전화번호")
