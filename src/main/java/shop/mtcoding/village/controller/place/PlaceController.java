@@ -36,24 +36,10 @@ public class PlaceController {
         return new ResponseEntity<>(new ResponseDTO<>(1, 200, "공간 전체 보기", allPlace), HttpStatus.OK);
     }
 
-//    @GetMapping
-//    public ResponseEntity<Page<PlaceSaveResponse>> getPage(Pageable pageable) {
-//        var page = placeService.getPage(pageable);
-//        var content = page.getContent()
-//                .stream()
-//                .map(Place::toDTO)
-//                .toList();
-//
-//        return ResponseEntity.ok(
-//                new PageImpl<>(content, pageable, page.getTotalElements())
-//        );
-//    }
-
     @PostMapping
     public @ResponseBody ResponseEntity<ResponseDTO> savePlace(
             @Valid @RequestBody PlaceSaveRequest placeSaveRequest
     ) {
-
 
 
         var save = placeService.공간등록하기(placeSaveRequest);
