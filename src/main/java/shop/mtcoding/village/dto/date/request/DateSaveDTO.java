@@ -8,18 +8,18 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Getter
 @ToString
 public class DateSaveDTO {
 
-    @ElementCollection
     @Column(name = "dayOfWeekName")
-    private List<String> dayOfWeekName;
+    private List<Map<String, String>> dayOfWeekName;
 
     public Dates toEntity() {
         Dates date = new Dates();
-        date.setDayOfWeekName(dayOfWeekName);
+        date.setDayOfWeekName(dayOfWeekName.toString());
         return date;
     }
 

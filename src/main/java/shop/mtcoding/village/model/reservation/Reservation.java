@@ -5,8 +5,11 @@ import org.hibernate.annotations.Comment;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 import shop.mtcoding.village.core.jpa.BaseTime;
+import shop.mtcoding.village.dto.reservation.ReservationDTO;
+import shop.mtcoding.village.dto.reservation.response.ReservationSaveResponse;
 import shop.mtcoding.village.model.place.Place;
 import shop.mtcoding.village.model.user.User;
+import shop.mtcoding.village.util.TotalPrice;
 import shop.mtcoding.village.util.status.ReservationStatus;
 
 import javax.persistence.*;

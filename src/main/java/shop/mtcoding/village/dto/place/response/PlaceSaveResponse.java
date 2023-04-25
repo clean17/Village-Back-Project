@@ -34,18 +34,16 @@ public class PlaceSaveResponse {
 
     private String notice;
 
-    private List<String> dayOfWeek;
+    private Dates dayOfWeek;
 
-    private List<String> hashtagName;
+    private Hashtag hashtagName;
 
-    private String facilityName;
+    private FacilityInfo facilityName;
 
     private String categoryName;
 
     public PlaceSaveResponse(String title, Address placeAddress, String tel, String startTime, String endTime, String placeIntroductionInfo, Integer maxPeople
-
-            ,Integer maxParking, Integer pricePerHour, String notice, List<String> dayOfWeek, List<String> hashtagName, List<String> facilityName, String categoryName) {
-
+            ,Integer maxParking, Integer pricePerHour, String notice) {
         this.title = title;
         this.placeAddress = placeAddress;
         this.tel = tel;
@@ -56,10 +54,10 @@ public class PlaceSaveResponse {
         this.maxParking = maxParking;
         this.pricePerHour = pricePerHour;
         this.notice = notice;
-        this.dayOfWeek = dayOfWeek;
-        this.hashtagName = hashtagName;
-        this.facilityName = facilityName;
-        this.categoryName = categoryName;
+//        this.dayOfWeek = dayOfWeek;
+//        this.hashtagName = hashtagName;
+//        this.facilityName = facilityName;
+//        this.categoryName = categoryName;
     }
 
 
