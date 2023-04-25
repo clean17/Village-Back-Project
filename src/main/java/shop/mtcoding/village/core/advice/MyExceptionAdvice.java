@@ -61,7 +61,7 @@ public class MyExceptionAdvice {
         Sentry.captureException(e);
         String errMsg = e.getErroMap().toString();
         String devideMsg = errMsg.split("=")[1].split(",")[0].split("}")[0];
-        return new ResponseEntity<>(new ResponseDTO<>(-1, devideMsg,null), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(new ResponseDTO<>(-1, 400, devideMsg,null), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(MyConstException.class)
@@ -74,6 +74,6 @@ public class MyExceptionAdvice {
     @ExceptionHandler(CustomException.class)
     public ResponseEntity<?> customException(CustomApiException e) {
         Sentry.captureException(e);
-        return new ResponseEntity<>(new ResponseDTO<>(-1, e.getMessage(), null), e.getStatus());
+        return new ResponseEntity<>(new ResponseDTO<>(-1, 400, e.getMessage(), null), e.getStatus());
     }
 }
