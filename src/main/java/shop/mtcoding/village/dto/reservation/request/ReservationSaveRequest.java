@@ -26,8 +26,13 @@ import shop.mtcoding.village.model.user.User;
 >>>>>>> a5386fa (알림 상황 진행중)
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+<<<<<<< HEAD
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+import java.time.LocalTime;
+>>>>>>> c391c21 (Reservation Refactor 완료)
 
 @Getter
 @ToString
@@ -38,6 +43,7 @@ public class ReservationSaveRequest {
 
     private Integer peopleNum;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     @NotNull(message = "날짜를 선택해주세요.")
     private LocalDateTime date;
@@ -61,12 +67,15 @@ public class ReservationSaveRequest {
 
 =======
 //    @NotBlank(message = "날짜를 선택해주세요.")
+=======
+    @NotNull(message = "날짜를 선택해주세요.")
+>>>>>>> c391c21 (Reservation Refactor 완료)
     private LocalDateTime date;
 
-//    @NotBlank(message = "시작 시간을 입력해주세요.")
+    @NotNull(message = "시작 시간을 입력해주세요.")
     private LocalDateTime startTime;
 
-//    @NotBlank(message = "끝 시간을 입력해주세요.")
+    @NotNull(message = "끝 시간을 입력해주세요.")
     private LocalDateTime endTime;
 
 <<<<<<< HEAD
@@ -76,7 +85,18 @@ public class ReservationSaveRequest {
 =======
     private ReservationStatus reservationStatus;
 
+<<<<<<< HEAD
 >>>>>>> a5386fa (알림 상황 진행중)
+=======
+    public LocalTime getStartTime() {
+        return startTime.toLocalTime();
+    }
+
+    public LocalTime getEndTime() {
+        return endTime.toLocalTime();
+    }
+
+>>>>>>> c391c21 (Reservation Refactor 완료)
 
 >>>>>>> 0a7ac65 (fcm 완료)
     public Reservation toEntity() {
