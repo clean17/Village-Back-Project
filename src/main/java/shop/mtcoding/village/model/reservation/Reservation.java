@@ -25,6 +25,7 @@ import java.util.List;
 public class Reservation {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
     @Comment("예약 상태")
@@ -33,6 +34,8 @@ public class Reservation {
 
 
 >>>>>>> cb21803 (Reservation save 완료)
+=======
+>>>>>>> 4378292 (Place Refactor 완료)
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Comment("예약 아이디")

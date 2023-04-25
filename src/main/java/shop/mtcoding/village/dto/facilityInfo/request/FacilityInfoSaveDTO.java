@@ -13,10 +13,14 @@ import java.util.List;
 @Getter
 public class FacilityInfoSaveDTO {
 <<<<<<< HEAD
+<<<<<<< HEAD
     private List<FacilityInfoDTO> facilityName;
 =======
     private FacilityInfo facilityName;
 >>>>>>> 0a7ac65 (fcm 완료)
+=======
+    private List<FacilityInfoDTO> facilityName;
+>>>>>>> 4378292 (Place Refactor 완료)
 
     @Setter
     @Getter
@@ -26,16 +30,22 @@ public class FacilityInfoSaveDTO {
         private Place placeId;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4378292 (Place Refactor 완료)
         public FacilityInfo toEntity(String name, Place id) {
             FacilityInfo facilityInfoName = new FacilityInfo();
             facilityInfoName.setPlace(id);
             facilityInfoName.setFacilityName(name);
             return facilityInfoName;
         }
+<<<<<<< HEAD
 =======
         FacilityInfo facilityInfo = new FacilityInfo();
         facilityInfo.setFacilityName(facilityName.toString());
         return facilityInfo;
 >>>>>>> 0a7ac65 (fcm 완료)
+=======
+>>>>>>> 4378292 (Place Refactor 완료)
     }
 }

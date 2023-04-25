@@ -117,6 +117,7 @@ public class Place {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public PlaceSaveResponse toResponse() {
 =======
     public PlaceSaveResponse toResponse(Dates dates, Hashtag hashtag, FacilityInfo facilityInfo, Category category) {
@@ -130,11 +131,15 @@ public class Place {
         String categoryName = category.getCategoryName();
 
 >>>>>>> 0a7ac65 (fcm 완료)
+=======
+    public PlaceSaveResponse toResponse() {
+>>>>>>> 4378292 (Place Refactor 완료)
         return new PlaceSaveResponse(
                 title, address, tel, startTime.toString(), endTime.toString(), placeIntroductionInfo, pricePerHour, maxPeople, maxParking, notice
         );
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     public PlaceUpdateResponse toUpdateResponse() {
 =======
@@ -148,6 +153,9 @@ public class Place {
 
         String categoryName = category.getCategoryName();
 >>>>>>> 0a7ac65 (fcm 완료)
+=======
+    public PlaceUpdateResponse toUpdateResponse() {
+>>>>>>> 4378292 (Place Refactor 완료)
 
         return new PlaceUpdateResponse(
                 title, address, tel, startTime.toString(), endTime.toString(), placeIntroductionInfo, pricePerHour, maxPeople, maxParking, notice
