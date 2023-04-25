@@ -69,7 +69,7 @@ public class FacilityInfoRepositoryTest {
             Assertions.assertEquals(result.getFacilityName(), "카페");
 
             String facilityInfo = "매점";
-            result.setFacilityName(Collections.singletonList(facilityInfo));
+            result.setFacilityName(facilityInfo);
             FacilityInfo merge = entityManager.merge(result);
 
             Assertions.assertEquals(merge.getFacilityName(), "매점");
@@ -110,6 +110,7 @@ public class FacilityInfoRepositoryTest {
         this.entityManager.persist(review);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         Category category = new Category().builder().categoryName("이름").build();
         this.entityManager.persist(category);
@@ -125,10 +126,13 @@ public class FacilityInfoRepositoryTest {
 
 
 >>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
+=======
+>>>>>>> 5a35c2a (refactoring 후 JPA 테스트 완료)
         Place place = new Place().builder().title("제목").address(address).tel("123123").placeIntroductionInfo("공간정보").notice("공간소개")
                 .startTime(LocalTime.from(LocalDateTime.now())).endTime(LocalTime.from(LocalDateTime.now())).build();
         this.entityManager.persist(place);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         FacilityInfo facilityName = new FacilityInfo().builder().place(place).facilityName(facilityInfoName).build();
 =======
@@ -136,6 +140,9 @@ public class FacilityInfoRepositoryTest {
         hashtagName.setPlace(place);
 
 >>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
+=======
+        FacilityInfo facilityName = new FacilityInfo().builder().place(place).facilityName(facilityInfoName).build();
+>>>>>>> 5a35c2a (refactoring 후 JPA 테스트 완료)
         return this.entityManager.persist(facilityName);
     }
 }

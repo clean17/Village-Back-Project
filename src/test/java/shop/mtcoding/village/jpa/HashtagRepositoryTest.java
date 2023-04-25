@@ -56,7 +56,11 @@ public class HashtagRepositoryTest {
         Assertions.assertNotEquals(hashtags.size(), 0);
 
         Hashtag hashtag = hashtags.get(0);
+<<<<<<< HEAD
         Assertions.assertEquals(hashtag.getHashtagName(), "파티룸");
+=======
+        Assertions.assertEquals(hashtag.getHashtagName(), "가까운곳");
+>>>>>>> 5a35c2a (refactoring 후 JPA 테스트 완료)
     }
 
     @Test
@@ -67,10 +71,14 @@ public class HashtagRepositoryTest {
 
         if (optionalHashtag.isPresent()) {
             var result = optionalHashtag.get();
+<<<<<<< HEAD
             Assertions.assertEquals(result.getHashtagName(), "파티룸");
+=======
+            Assertions.assertEquals(result.getHashtagName(), "가까운곳");
+>>>>>>> 5a35c2a (refactoring 후 JPA 테스트 완료)
 
             String hashtag = "음식점";
-            result.setHashtagName(Collections.singletonList(hashtag));
+            result.setHashtagName(hashtag);
             Hashtag merge = entityManager.merge(result);
 
             Assertions.assertEquals(merge.getHashtagName(), "음식점");
@@ -111,6 +119,7 @@ public class HashtagRepositoryTest {
         this.entityManager.persist(review);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         Category category = new Category().builder().categoryName("이름").build();
         this.entityManager.persist(category);
@@ -126,10 +135,13 @@ public class HashtagRepositoryTest {
 
 
 >>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
+=======
+>>>>>>> 5a35c2a (refactoring 후 JPA 테스트 완료)
         Place place = new Place().builder().title("제목").address(address).tel("123123").placeIntroductionInfo("공간정보").notice("공간소개")
                 .startTime(LocalTime.from(LocalDateTime.now())).endTime(LocalTime.from(LocalDateTime.now())).build();
         this.entityManager.persist(place);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         Hashtag hashtagName = new Hashtag().builder().hashtagName(hashtagName1).build();
 =======
@@ -137,6 +149,9 @@ public class HashtagRepositoryTest {
         hashtagName.setPlace(place);
 
 >>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
+=======
+        Hashtag hashtagName = new Hashtag().builder().hashtagName(hashtagName1).build();
+>>>>>>> 5a35c2a (refactoring 후 JPA 테스트 완료)
         return this.entityManager.persist(hashtagName);
     }
 }

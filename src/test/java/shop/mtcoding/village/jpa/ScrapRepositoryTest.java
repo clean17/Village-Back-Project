@@ -113,6 +113,7 @@ public class ScrapRepositoryTest {
         this.entityManager.persist(review);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
         Category category = new Category().builder().categoryName("이름").build();
@@ -127,6 +128,8 @@ public class ScrapRepositoryTest {
         Hashtag hashtagName = new Hashtag().builder().hashtagName(Collections.singletonList("연습실")).build();
         this.entityManager.persist(hashtagName);
 
+=======
+>>>>>>> 5a35c2a (refactoring 후 JPA 테스트 완료)
 
 >>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
         Place place = new Place().builder().title("제목").address(address).tel("123123").placeIntroductionInfo("공간정보").notice("공간소개")

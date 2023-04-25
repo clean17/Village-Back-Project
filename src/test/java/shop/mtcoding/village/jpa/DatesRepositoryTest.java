@@ -71,7 +71,7 @@ public class DatesRepositoryTest {
             Assertions.assertEquals(result.getDayOfWeekName(), "월요일");
 
             String day = "화요일";
-            result.setDayOfWeekName(Collections.singletonList(day));
+            result.setDayOfWeekName(day);
             Dates merge = entityManager.merge(result);
 
             Assertions.assertEquals(merge.getDayOfWeekName(), "화요일");
@@ -114,6 +114,7 @@ public class DatesRepositoryTest {
         this.entityManager.persist(category);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         Dates dates = new Dates().builder().dayOfWeekName(Collections.singletonList("월요일")).build();
         this.entityManager.persist(dates);
@@ -126,15 +127,21 @@ public class DatesRepositoryTest {
 
 
 >>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
+=======
+>>>>>>> 5a35c2a (refactoring 후 JPA 테스트 완료)
         Place place = new Place().builder().title("제목").address(address).tel("123123").placeIntroductionInfo("공간정보").notice("공간소개")
                 .startTime(LocalTime.from(LocalDateTime.now())).endTime(LocalTime.from(LocalDateTime.now())).build();
         this.entityManager.persist(place);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         Dates dates = new Dates().builder().place(place).dayOfWeekName(dayOfWeekName).build();
 =======
         dates.setPlace(place);
 >>>>>>> ca77a8a (FMC 이용 하여 알림 기능 구현중)
+=======
+        Dates dates = new Dates().builder().place(place).dayOfWeekName(dayOfWeekName).build();
+>>>>>>> 5a35c2a (refactoring 후 JPA 테스트 완료)
         return this.entityManager.persist(dates);
 
     }
