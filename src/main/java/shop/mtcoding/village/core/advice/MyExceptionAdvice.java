@@ -33,7 +33,7 @@ public class MyExceptionAdvice {
     public ResponseEntity<?> ex(Exception e){
         Sentry.captureException(e);
         String message = e.getMessage();
-        ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(1, message, HttpStatus.BAD_REQUEST);
+        ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(-1, 400, message, HttpStatus.BAD_REQUEST);
         return new ResponseEntity<>(responseDTO, HttpStatus.BAD_REQUEST);
     }
 
@@ -43,7 +43,7 @@ public class MyExceptionAdvice {
 
         Sentry.captureException(e);
         String message = e.getMessage();
-        ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(1, message, HttpStatus.BAD_REQUEST);
+        ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(-1, 400, message, HttpStatus.BAD_REQUEST);
         return new ResponseEntity<>(responseDTO, HttpStatus.BAD_REQUEST);
 
     }
@@ -67,7 +67,7 @@ public class MyExceptionAdvice {
     @ExceptionHandler(MyConstException.class)
     public ResponseEntity<?> error(MyConstException e){
         String detail = e.getMessage();
-        ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(400, detail, HttpStatus.BAD_REQUEST);
+        ResponseDTO<?> responseDTO = new ResponseDTO<>().fail(-1, 400, detail, HttpStatus.BAD_REQUEST);
         return new ResponseEntity<>(responseDTO, HttpStatus.BAD_REQUEST);
     }
 
