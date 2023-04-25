@@ -28,7 +28,8 @@ public class Hashtag {
 
     @Comment("해시태그 이름")
     @ElementCollection
-    @CollectionTable(name = "hashtag_name", joinColumns = @JoinColumn(name = "hashtag_id"))
+
+    @CollectionTable(name = "hashtag_tb", joinColumns = @JoinColumn(name = "hashtag_id"))
     @Column(name = "hashtag_name")
     private List<String> hashtagName;
 

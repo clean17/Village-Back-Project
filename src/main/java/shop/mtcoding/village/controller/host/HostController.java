@@ -33,6 +33,7 @@ public class HostController {
 
 
         return new ResponseEntity<>(new ResponseDTO<>(1, 200, "호스트 신청 완료", hostSave), HttpStatus.OK);
+
     }
 
 

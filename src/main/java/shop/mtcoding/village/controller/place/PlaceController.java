@@ -47,6 +47,7 @@ public class PlaceController {
         var save = placeService.공간등록하기(placeSaveRequest);
 
         return new ResponseEntity<>(new ResponseDTO<>(1, 200, "공간 데이터 등록 완료", save), HttpStatus.OK);
+
     }
 
     @PutMapping
@@ -61,6 +62,7 @@ public class PlaceController {
         var update = placeService.공간수정하기(placeUpdateRequest);
 
         return new ResponseEntity<>(new ResponseDTO<>(1, 200, "공간 데이터 수정 완료", update), HttpStatus.OK);
+
     }
 
     @DeleteMapping("/{id}")
@@ -75,6 +77,7 @@ public class PlaceController {
         placeService.공간삭제하기(optionalPlace.get());
 
         return new ResponseEntity<>(new ResponseDTO<>(1, 200, "공간 데이터 삭제 완료", null), HttpStatus.OK);
+
     }
 
 }

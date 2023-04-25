@@ -33,7 +33,7 @@ public class Dates {
 
     @Comment("공간의 아이디")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "placeId")
+    @JoinColumn(name = "place_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Place place;
