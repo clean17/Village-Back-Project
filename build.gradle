@@ -19,6 +19,8 @@ repositories {
 }
 
 dependencies {
+	// jsonconverter 사용 gradle
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.14.1'
 
 	// firebase 의존성
 	implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.2.2'
