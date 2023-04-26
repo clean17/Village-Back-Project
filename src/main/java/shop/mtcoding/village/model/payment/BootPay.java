@@ -1,10 +1,8 @@
 package shop.mtcoding.village.model.payment;
 
 import lombok.*;
-import shop.mtcoding.village.dto.ReceiptDTO;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 
