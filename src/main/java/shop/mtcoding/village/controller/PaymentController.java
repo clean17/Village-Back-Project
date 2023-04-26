@@ -38,17 +38,13 @@ public class PaymentController {
         System.out.println("리퀘스트 잘 들어왔는지? " + receiptDTO);
 
         String s = objectMapper.writeValueAsString(receiptDTO);
-
         System.out.println("오브젝트매퍼 역할 됐는지? " + s);
 
         BootPay 구매요청 = paymentService.구매요청(receiptDTO);
-
         System.out.println("서비스에서 잘 됐는지?" + 구매요청);
 
         HashMap<Object, Object> map = new HashMap<>();
-
         map.put("success", true);
-
         System.out.println("디버그 : " + map);
 
         return ResponseEntity.ok(map);
