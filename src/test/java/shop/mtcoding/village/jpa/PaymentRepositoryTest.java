@@ -11,10 +11,6 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 import shop.mtcoding.village.model.address.Address;
-import shop.mtcoding.village.model.category.Category;
-import shop.mtcoding.village.model.date.Dates;
-import shop.mtcoding.village.model.facilityInfo.FacilityInfo;
-import shop.mtcoding.village.model.hashtag.Hashtag;
 import shop.mtcoding.village.model.payment.Payment;
 import shop.mtcoding.village.model.payment.PaymentRepository;
 import shop.mtcoding.village.model.place.Place;
@@ -27,7 +23,6 @@ import shop.mtcoding.village.util.status.ReservationStatus;
 import javax.persistence.EntityManager;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -122,7 +117,7 @@ public class PaymentRepositoryTest {
                 .peopleNum(3).status(ReservationStatus.WAIT).build();
         this.entityManager.persist(reservation);
 
-        Payment payment = new Payment();
+        Payment payment = new Payment(receiptId, orderId, price, taxFree, cancelledPrice, cancelledTaxFree, orderName, companyName, gatewayUrl, metadata, sandbox, pg, method, methodSymbol, methodOrigin, methodOriginSymbol, purchasedAt, cancelledAt, requestedAt, statusLocale, receiptUrl, status, cardData);
         payment.setUser(user);
         payment.setPlace(place);
         payment.setReservation(reservation);
