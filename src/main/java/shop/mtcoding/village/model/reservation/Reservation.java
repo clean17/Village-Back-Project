@@ -29,7 +29,7 @@ public class Reservation {
     @Comment("예약 아이디")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     @Comment("예약한 유저 정보")
     @JoinColumn(name = "user_id")
     private User user;

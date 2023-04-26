@@ -1,16 +1,18 @@
 package shop.mtcoding.village.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
+import shop.mtcoding.village.model.payment.BootPay;
 
 import java.time.OffsetDateTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class ReceiptDTO {
     @JsonProperty("receipt_id")
     private String receiptId;
@@ -19,16 +21,16 @@ public class ReceiptDTO {
     private String orderId;
 
     @JsonProperty("price")
-    private int price;
+    private Integer price;
 
     @JsonProperty("tax_free")
-    private int taxFree;
+    private Integer taxFree;
 
     @JsonProperty("cancelled_price")
-    private int cancelledPrice;
+    private Integer cancelledPrice;
 
     @JsonProperty("cancelled_tax_free")
-    private int cancelledTaxFree;
+    private Integer cancelledTaxFree;
 
     @JsonProperty("order_name")
     private String orderName;
@@ -39,10 +41,7 @@ public class ReceiptDTO {
     @JsonProperty("gateway_url")
     private String gatewayUrl;
 
-    @JsonProperty("metadata")
-    private Metadata metadata;
-
-    private boolean sandbox;
+    private Boolean sandbox;
 
     private String pg;
 
@@ -72,66 +71,18 @@ public class ReceiptDTO {
     @JsonProperty("receipt_url")
     private String receiptUrl;
 
-    private int status;
+    private Integer status;
 
-    @JsonProperty("card_data")
-    private CardData cardData;
+    private CardDataDTO cardDataDTO;
 
-    @Getter
-    @Setter
-    public class CardData {
-        @JsonProperty("tid")
-        private String tid;
+    private MetadataDTO metadataDTO;
 
-        @JsonProperty("card_approve_no")
-        private String cardApproveNo;
+    public BootPay toEntity() {
 
-        @JsonProperty("card_no")
-        private String cardNo;
-
-        @JsonProperty("card_quota")
-        private String cardQuota;
-
-        @JsonProperty("card_company_code")
-        private String cardCompanyCode;
-
-        @JsonProperty("card_company")
-        private String cardCompany;
+        return new BootPay(null, this.receiptId, this.orderId, this.price, this.taxFree, this.cancelledPrice, this.cancelledTaxFree,
+                this.orderName, this.companyName, this.gatewayUrl, this.sandbox, this.pg,
+                this.method, this.methodSymbol, this.methodOrigin, this.methodOriginSymbol, this.purchasedAt,
+                this.cancelledAt, this.requestedAt, this.statusLocale, this.receiptUrl, this.status);
     }
 
-    @Getter
-    @Setter
-    public class Metadata {
-        @JsonProperty("test")
-        private String test;
-    }
-
-    public ReceiptDTO(String receiptId, String orderId, int price, int taxFree, int cancelledPrice, int cancelledTaxFree,
-                      String orderName, String companyName, String gatewayUrl, Metadata metadata, boolean sandbox, String pg,
-                      String method, String methodSymbol, String methodOrigin, String methodOriginSymbol, OffsetDateTime purchasedAt,
-                      OffsetDateTime cancelledAt, OffsetDateTime requestedAt, String statusLocale, String receiptUrl, int status, CardData cardData) {
-        this.receiptId = receiptId;
-        this.orderId = orderId;
-        this.price = price;
-        this.taxFree = taxFree;
-        this.cancelledPrice = cancelledPrice;
-        this.cancelledTaxFree = cancelledTaxFree;
-        this.orderName = orderName;
-        this.companyName = companyName;
-        this.gatewayUrl = gatewayUrl;
-        this.metadata = metadata;
-        this.sandbox = sandbox;
-        this.pg = pg;
-        this.method = method;
-        this.methodSymbol = methodSymbol;
-        this.methodOrigin = methodOrigin;
-        this.methodOriginSymbol = methodOriginSymbol;
-        this.purchasedAt = purchasedAt;
-        this.cancelledAt = cancelledAt;
-        this.requestedAt = requestedAt;
-        this.statusLocale = statusLocale;
-        this.receiptUrl = receiptUrl;
-        this.status = status;
-        this.cardData = cardData;
-    }
 }
