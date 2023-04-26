@@ -117,8 +117,9 @@ public class PaymentRepositoryTest {
                 .peopleNum(3).status(ReservationStatus.WAIT).build();
         this.entityManager.persist(reservation);
 
-        Payment payment = new Payment(receiptId, orderId, price, taxFree, cancelledPrice, cancelledTaxFree, orderName, companyName, gatewayUrl, metadata, sandbox, pg, method, methodSymbol, methodOrigin, methodOriginSymbol, purchasedAt, cancelledAt, requestedAt, statusLocale, receiptUrl, status, cardData);
-        payment.setUser(user);
+        Payment payment = new Payment().builder().user(user).place(place).reservation(reservation).status(
+                PaymentStatus.WAIT
+        ).totalPrice(50000).build(); payment.setUser(user);
         payment.setPlace(place);
         payment.setReservation(reservation);
         payment.setStatus(status);

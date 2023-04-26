@@ -109,9 +109,9 @@ insert into payment_tb (user_id, place_id, reservation_id, status, total_price)
 values (1, 1, 1, 'FAIL', 10000);
 --
 insert into dates_tb (day_of_week_name, place_id)
-values ('월요일,화요일,수요일,목요일', 1);
+values ('월요일', 1);
 insert into dates_tb (day_of_week_name, place_id)
-values ('월요일,목요일,금요일,토요일', 1);
+values ('화요일', 1);
 insert into dates_tb (day_of_week_name, place_id)
 values ('수요일', 2);
 
@@ -122,14 +122,6 @@ insert into notice_tb (user_id, place_id, payment_id, content, status)
 values (2, 2, 2, '내용2', 'WAIT');
 insert into notice_tb (user_id, place_id, payment_id, content, status)
 values (3, 3, 3, '내용3', 'WAIT');
-
-
-insert into dates_tb (day_of_week_name, place_id)
-values ('월요일,화요일,수요일,목요일', 1);
-insert into dates_tb (day_of_week_name, place_id)
-values ('월요일,목요일,금요일,토요일', 1);
-insert into dates_tb (day_of_week_name, place_id)
-values ('수요일',  2);
 
 insert into notice_tb (user_id, place_id, payment_id, content, status)
 values (1, 1, 1, '내용1', 'WAIT');
@@ -151,6 +143,15 @@ insert into file_info_tb(type) values ('FACILITY');
 insert into file_tb(file_info_id, file_name, file_url, status) values (1, '8.jpg', 'https://news.samsungdisplay.com/wp-content/uploads/2018/08/8.jpg', 'WAIT');
 insert into file_tb(file_info_id, file_name, file_url, status) values (2, 'aa.jpg', 'https://news.dbhasjuhwuha.com/wp-content/uploads/2021/08/aa.jpg', 'WAIT');
 insert into file_tb(file_info_id, file_name, file_url, status) values (2, 'bb8.jpg', 'https://news.ahjsbaghuwssplay.com/wp-content/uploads/2011/08/bb8.jpg', 'WAIT');
+
+-- INSERT INTO boot_pay_tb (sandbox,pg,method,status,receipt_id,order_id,price,tax_free,cancelled_price,cancelled_tax_free,order_name,company_name,gateway_url,test,method_symbol,method_origin,method_origin_symbol,purchased_at,cancelled_at,requested_at,status_locale,receipt_url)
+-- VALUES (true,'KCP','카드결제',20,'62b2b34cd01c7e001bc20965','1655878475361',0,0,1000,0,'결제 테스트 스웻터','주) 부트페이','https://gw.bootpay.co.kr','{"test": null}','card','카드결제','card','2023-04-26T07:38:22Z','2022-06-23T08:47:59Z','2023-04-26T06:41:22Z','결제취소완료','https://door.bootpay.co.kr/receipt/YkZvdFpXNFRaVjkwMGhIemFONXluYXZldnlyN2JzdStlSXNZR3ZOTlFRNTlC%0Adz09LS1SVS9uYVIrYVpwWnJCcjhyLS1iSStsdUZjV0Jwa0ZlUldacVU4K3Z3%0APT0%3D%0A');
+
+-- INSERT INTO boot_pay_tb (sandbox,pg,method,tatus,receipt_id,order_id,price,tax_free,cancelled_price,cancelled_tax_free,order_name,company_name,gateway_url,test,method_symbol,method_origin,method_origin_symbol,purchased_at,cancelled_at,requested_at,status_locale,receipt_url)
+-- VALUES (true,'KCP1','카드결제',20,'62b2b34cd01c7e001bc20965','1655878475361',0,0,1000,0,'결제 테스트 스웻터','주) 부트페이','https://gw.bootpay.co.kr','{"test": null}','card','카드결제','card','2023-04-26T07:38:22Z','2022-06-23T08:47:59Z','2023-04-26T06:41:22Z','결제취소완료','https://door.bootpay.co.kr/receipt/YkZvdFpXNFRaVjkwMGhIemFONXluYXZldnlyN2JzdStlSXNZR3ZOTlFRNTlC%0Adz09LS1SVS9uYVIrYVpwWnJCcjhyLS1iSStsdUZjV0Jwa0ZlUldacVU4K3Z3%0APT0%3D%0A');
+--
+-- INSERT INTO boot_pay_tb (sandbox,pg,method,tatus,receipt_id,order_id,price,tax_free,cancelled_price,cancelled_tax_free,order_name,company_name,gateway_url,test,method_symbol,method_origin,method_origin_symbol,purchased_at,cancelled_at,requested_at,status_locale,receipt_url)
+-- VALUES (true,'KCP2','카드결제',20,'62b2b34cd01c7e001bc20965','1655878475361',0,0,1000,0,'결제 테스트 스웻터','주) 부트페이','https://gw.bootpay.co.kr','{"test": null}','card','카드결제','card','2023-04-26T07:38:22Z','2022-06-23T08:47:59Z','2023-04-26T06:41:22Z','결제취소완료','https://door.bootpay.co.kr/receipt/YkZvdFpXNFRaVjkwMGhIemFONXluYXZldnlyN2JzdStlSXNZR3ZOTlFRNTlC%0Adz09LS1SVS9uYVIrYVpwWnJCcjhyLS1iSStsdUZjV0Jwa0ZlUldacVU4K3Z3%0APT0%3D%0A');
 
 
 commit;

@@ -69,7 +69,7 @@ public class NoticeRepositoryTest {
             var result = optionalNotice.get();
             Assertions.assertEquals(result.getUser().getName(), "ssar");
 
-            var paymentTotalPrice = new Payment(receiptId, orderId, price, taxFree, cancelledPrice, cancelledTaxFree, orderName, companyName, gatewayUrl, metadata, sandbox, pg, method, methodSymbol, methodOrigin, methodOriginSymbol, purchasedAt, cancelledAt, requestedAt, statusLocale, receiptUrl, status, cardData);
+            var paymentTotalPrice = new Payment();
             paymentTotalPrice.setTotalPrice(50000);
             result.setPayment(paymentTotalPrice);
             Notice merge = entityManager.merge(result);
@@ -120,7 +120,7 @@ public class NoticeRepositoryTest {
         this.entityManager.persist(reservation);
 
 
-        Payment payment = new Payment(receiptId, orderId, price, taxFree, cancelledPrice, cancelledTaxFree, orderName, companyName, gatewayUrl, metadata, sandbox, pg, method, methodSymbol, methodOrigin, methodOriginSymbol, purchasedAt, cancelledAt, requestedAt, statusLocale, receiptUrl, status, cardData).builder().user(user).place(place).reservation(reservation).status(
+        Payment payment = new Payment().builder().user(user).place(place).reservation(reservation).status(
                 PaymentStatus.WAIT
         ).totalPrice(50000).build();
         this.entityManager.persist(payment);
