@@ -21,6 +21,7 @@ public class SearchService {
     private final SearchRepository searchRepository;
     private final SearchJpaRepository searchJpaRepository;
 
+
     @Transactional
     public List<SearchList> 검색(String keyword) {
         try {
@@ -41,6 +42,21 @@ public class SearchService {
 
         } catch (Exception500 e) {
             throw new Exception500("키워드저장 오류" + e.getMessage());
+
+        }
+
+    }
+
+
+
+    @Transactional
+    public void 키워드저장(SearchRequest.SaveSearch saveSearch) {
+        try {
+            Search searchPS = saveSearch.toEntity();
+            searchJpaRepository.save(searchPS);
+
+        } catch (Exception500 e) {
+            throw new Exception500("키워드저장 오류" + e.getMessage());
         }
 
     }
@@ -48,12 +64,12 @@ public class SearchService {
 
     @Transactional
     public List<SearchOrderby> 높은가격순정렬() {
-
         try {
             return searchRepository.searchPlacesByPriceDescending();
         }catch (Exception500 e) {
             throw new Exception500("높은가격순정렬 오류" + e.getMessage());
         }
+        
     }
     @Transactional
     public List<SearchOrderby> 낮은가격순정렬() {
@@ -72,6 +88,27 @@ public class SearchService {
         }catch (Exception500 e) {
             throw new Exception500("낮은가격순정렬 오류" + e.getMessage());
         }
+    
+
     }
+
+    public List<SearchOrderby> 낮은가격순정렬() {
+
+        try {
+            return searchRepository.searchPlacesByPriceAscending();
+        }catch (Exception500 e) {
+            throw new Exception500("낮은가격순정렬 오류" + e.getMessage());
+        }
+    }
+
+    public List<SearchOrderby> 별점높은순정렬() {
+
+        try {
+            return searchRepository.searchPlaceByStarRaingDescending();
+        }catch (Exception500 e) {
+            throw new Exception500("낮은가격순정렬 오류" + e.getMessage());
+        }
+    }
+
 
 }
