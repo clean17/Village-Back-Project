@@ -28,8 +28,10 @@ import shop.mtcoding.village.core.jwt.MyJwtProvider;
 import shop.mtcoding.village.dto.ResponseDTO;
 import shop.mtcoding.village.dto.place.request.PlaceSaveRequest;
 import shop.mtcoding.village.dto.place.request.PlaceUpdateRequest;
+import shop.mtcoding.village.dto.place.response.PlaceList;
+import shop.mtcoding.village.dto.search.SearchOrderby;
 import shop.mtcoding.village.model.place.Place;
-import shop.mtcoding.village.model.place.PlaceRepository;
+import shop.mtcoding.village.model.place.PlaceJpaRepository;
 import shop.mtcoding.village.notFoundConst.PlaceConst;
 import shop.mtcoding.village.notFoundConst.RoleConst;
 import shop.mtcoding.village.service.PlaceService;
@@ -92,7 +94,6 @@ public class PlaceController {
             @Valid @RequestBody PlaceUpdateRequest placeUpdateRequest, Errors Errors,
             @AuthenticationPrincipal MyUserDetails myUserDetails
     ) {
-
         String role = myUserDetails.getUser().getRole();
 
         if (!role.equals("HOST")) {

@@ -13,6 +13,8 @@ import shop.mtcoding.village.dto.facilityInfo.request.FacilityInfoSaveDTO;
 import shop.mtcoding.village.dto.hashtag.request.HashtagSaveDTO;
 import shop.mtcoding.village.dto.place.request.PlaceSaveRequest;
 import shop.mtcoding.village.dto.place.request.PlaceUpdateRequest;
+import shop.mtcoding.village.dto.place.response.PlaceList;
+import shop.mtcoding.village.dto.search.SearchOrderby;
 import shop.mtcoding.village.model.category.CategoryRepository;
 import shop.mtcoding.village.model.date.DateRepository;
 import shop.mtcoding.village.model.date.Dates;
@@ -23,6 +25,7 @@ import shop.mtcoding.village.model.file.FileRepository;
 import shop.mtcoding.village.model.hashtag.Hashtag;
 import shop.mtcoding.village.model.hashtag.HashtagRepository;
 import shop.mtcoding.village.model.place.Place;
+import shop.mtcoding.village.model.place.PlaceJpaRepository;
 import shop.mtcoding.village.model.place.PlaceRepository;
 import shop.mtcoding.village.model.review.ReviewRepository;
 import shop.mtcoding.village.util.Base64Decoded;
@@ -39,6 +42,8 @@ public class PlaceService {
 
     private final PlaceRepository placeRepository;
 
+    private final PlaceJpaRepository placeJpaRepository;
+
     private final DateRepository dateRepository;
 
     private final HashtagRepository hashtagRepository;
@@ -52,6 +57,18 @@ public class PlaceService {
     private final FileService fileService;
 
     private final S3Service s3Service;
+
+    @Transactional
+    public List<PlaceList> 공간리스트() {
+
+        try {
+            return placeRepository.PlaceList();
+        }catch (Exception500 e) {
+            throw new Exception500("공간리스트 오류" + e.getMessage());
+        }
+    }
+
+
 
     @Transactional
     public Place 공간등록하기(PlaceSaveRequest placeRequest) {
@@ -68,6 +85,7 @@ public class PlaceService {
             Place savePlace = placeRepository.save(placeRequest.toEntity());
 
             Optional<Place> byId = placeRepository.findById(savePlace.getId());
+
             Place place = byId.get();
 
             // 해시태그 insert
@@ -115,13 +133,13 @@ public class PlaceService {
 
     @Transactional
     public Optional<Place> getPlace(Long id) {
-        return placeRepository.findById(id);
+        return placeJpaRepository.findById(id);
     }
 
     @Transactional
     public void 공간삭제하기(Place place) {
         try {
-            placeRepository.delete(place);
+            placeJpaRepository.delete(place);
         } catch (Exception500 e) {
             throw new Exception500("공간삭제 오류" + e.getMessage());
         }
@@ -135,6 +153,7 @@ public class PlaceService {
             Place updatePlace = placeRepository.save(placeUpdateRequest.toEntity());
 
             Optional<Place> byId = placeRepository.findById(updatePlace.getId());
+
             Place place1 = byId.get();
 
             // 해시태그 update
@@ -176,7 +195,15 @@ public class PlaceService {
     }
 
     public Page<Place> getPage(Pageable pageable) {
-        return placeRepository.findAll(pageable);
+        return placeJpaRepository.findAll(pageable);
+    }
+
+    public Optional<Place> 공간상세보기(Long id) {
+        return placeJpaRepository.findById(id);
+    }
+
+    public List<Place> 공간메인보기() {
+        return placeJpaRepository.findAll();
     }
 
     public Optional<Place> 공간상세보기(Long id) {
@@ -187,3 +214,4 @@ public class PlaceService {
         return placeRepository.findAll();
     }
 }
+

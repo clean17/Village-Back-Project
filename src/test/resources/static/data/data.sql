@@ -26,6 +26,7 @@ values (1, '333456-01-111244');
 insert into place_tb (user_id, title, address_id, tel, notice, place_introduction_info, max_people, max_parking,
                       price_per_hour,
                       start_time, end_time)
+
 values (1, '스튜디오 르온드', 1, '01012345678', '좋은 공간입니다.', '좋은 공간입니다. 이용해보세요!', 10, 5, 5, NOW(), NOW());
 insert into place_tb (user_id, title, address_id, tel, notice, place_introduction_info, max_people, max_parking,
                       price_per_hour,
@@ -35,7 +36,6 @@ insert into place_tb (user_id, title, address_id, tel, notice, place_introductio
                       price_per_hour,
                       start_time, end_time)
 values (3, '업타운댄스뮤직 아카데미', 3, '01012345680', '편안한 공간입니다.', '편안한 공간입니다. 이용해보세요!', 10, 15, 3, NOW(), NOW());
-
 
 insert into review_tb (user_id, place_id, star_rating, content, image, like_count, created_at)
 values (1, 1, 5, '좋은 상품이에요', NULL, 10, now());
@@ -109,11 +109,13 @@ insert into payment_tb (user_id, place_id, reservation_id, status, total_price)
 values (1, 1, 1, 'FAIL', 10000);
 --
 insert into dates_tb (day_of_week_name, place_id)
+
 values ('월요일', 1);
 insert into dates_tb (day_of_week_name, place_id)
 values ('화요일', 1);
 insert into dates_tb (day_of_week_name, place_id)
 values ('수요일', 2);
+
 
 insert into notice_tb (user_id, place_id, payment_id, content, status)
 values (1, 1, 1, '내용1', 'WAIT');
