@@ -160,4 +160,12 @@ public class PlaceService {
     public Page<Place> getPage(Pageable pageable) {
         return placeRepository.findAll(pageable);
     }
+
+    public Optional<Place> 공간상세보기(Long id) {
+        return placeRepository.findById(id);
+    }
+
+    public List<Place> 공간메인보기() {
+        return placeRepository.findAll();
+    }
 }

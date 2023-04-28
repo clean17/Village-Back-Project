@@ -1,6 +1,7 @@
 package shop.mtcoding.village.controller.place;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -34,20 +35,26 @@ import shop.mtcoding.village.notFoundConst.RoleConst;
 import shop.mtcoding.village.service.PlaceService;
 
 @RestController
-@RequestMapping
 @RequiredArgsConstructor
 @Slf4j
 public class PlaceController {
 
     private final PlaceService placeService;
 
-    private final PlaceRepository placeRepository;
-
     @GetMapping("/place")
     public ResponseEntity<ResponseDTO<List<Place>>> getPlace() {
-        List<Place> allPlace = placeRepository.findAll();
-        System.out.println("등록 페이지 전체 보기 : " + allPlace);
+
+        List<Place> allPlace = placeService.공간메인보기();
+
         return new ResponseEntity<>(new ResponseDTO<>(1, 200, "공간 전체 보기", allPlace), HttpStatus.OK);
+    }
+
+    @GetMapping("/place/{id}")
+    public ResponseEntity detailPlace(
+            @PathVariable Long id
+    ) {
+        Optional<Place> detailPlace = placeService.공간상세보기(id);
+        return new ResponseEntity<>(new ResponseDTO<>(1, 200, "공간 상세 보기",detailPlace), HttpStatus.OK);
     }
 
     // @GetMapping
