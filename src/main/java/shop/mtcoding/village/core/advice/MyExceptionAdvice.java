@@ -15,7 +15,6 @@ import shop.mtcoding.village.dto.ResponseDTO;
 import java.util.Arrays;
 import java.util.List;
 
-
 @RestControllerAdvice
 public class MyExceptionAdvice {
 
