@@ -40,7 +40,7 @@
          Assertions.assertNotEquals(files.size(), 0);
 
          File file = files.get(0);
-         Assertions.assertEquals(file.getFileName(), "8.jpg");
+         Assertions.assertEquals(file.getFileName(), "사무실.jpg");
      }
 
      @Test
@@ -51,7 +51,7 @@
 
          if(optionalFiles.isPresent()) {
              var result = optionalFiles.get();
-             Assertions.assertEquals(result.getFileName(),"8.jpg");
+             Assertions.assertEquals(result.getFileName(),"사무실.jpg");
 
              var fileUrl = "jsadjwnqjkdnjskandjskandjka111";
              result.setFileUrl(fileUrl);

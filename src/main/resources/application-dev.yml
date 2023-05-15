@@ -41,10 +41,6 @@ cloud:
 
 
 spring:
-  sql:
-    init:
-      data-locations: classpath:db/data.sql
-      mode: always
   mvc:
     view:
       prefix: /WEB-INF/view/

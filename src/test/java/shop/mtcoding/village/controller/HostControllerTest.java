@@ -39,7 +39,7 @@ public class HostControllerTest extends AbstractIntegrated {
         HostSaveRequest request = new HostSaveRequest("ssar", "호스트 닉네임", address, "123-45-678", HostStatus.WAIT );
         this.mockMvc.perform(
                         post("/user/host")
-//                                .header("Authorization", getUser())
+                                .header("Authorization", getUser())
                                 .content(objectMapper.writeValueAsString(request))
                                 .accept(MediaType.APPLICATION_JSON_VALUE)
                                 .contentType(MediaType.APPLICATION_JSON_VALUE)
