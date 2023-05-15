@@ -14,7 +14,7 @@ sentry:
   logging: # 범위
     minimum-event-level: "WARN"
     minimum-breadcrumb-level: "INFO"
-  dsn: https://56ab2b3b2d344c9cac66ca3d3fa4efe1@o4504986976124928.ingest.sentry.io/4504986986217472
+  dsn: ${secrets.SENTRY_DSN}
   sample-rate: 0.5 # 샘플링 비율 1=100% 다 보냄
   #traces-sample-rate # 트랜잭션 비율 설정
 
@@ -27,8 +27,8 @@ cloud:
     s3:
       bucket: villages-3
     credentials:
-      access-key: AKIAQQ5QPUSNTPXXS7BC
-      secret-key: 0S/lJhMR4xmYK6h2dijZF3iPQcE7op3Bn56mKeQ3
+      access-key: ${secrets.S3_ACCESS_KEY}
+      secret-key: ${secrets.S3_SECRET_KEY}
     stack:
       auto: false
 
@@ -37,8 +37,8 @@ cloud:
 #  access-key: ${access-key}
 #  secret-key: ${secret-key}
 #  staticval: ${static}
-
-
+meta:
+  name: ${secrets.HS512_SECRET}
 
 spring:
   mvc:
