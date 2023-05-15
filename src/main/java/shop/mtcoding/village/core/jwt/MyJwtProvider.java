@@ -7,18 +7,21 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.SignatureVerificationException;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import org.springframework.beans.factory.annotation.Value;
 
-import com.google.api.client.util.Value;
 import shop.mtcoding.village.model.user.User;
 
 
 public class MyJwtProvider {
 
+    @Value("${meta.name}")
+    private static String SECRET;
+    
     private static final String SUBJECT = "jwtstudy";
     private static final int EXP = 1000 * 60 * 60 * 24 * 7;
     public static final String TOKEN_PREFIX = "Bearer "; // 스페이스 필요함
     public static final String HEADER = "Authorization";
-    private static final String SECRET = System.getenv("HS512_SECRET");
+    // private static final String SECRET = System.getenv("HS512_SECRET");
 
     public static String create(User user) {
         String jwt = JWT.create()
