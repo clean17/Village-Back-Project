@@ -65,7 +65,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
-        naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+          implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
         default_batch_fetch_size: 1000
     defer-datasource-initialization: true
 
