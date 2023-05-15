@@ -33,12 +33,6 @@
      @Autowired
      private EntityManager em;
 
-     @BeforeEach
-     public void init() {
-         em.createNativeQuery("ALTER TABLE category_tb ALTER COLUMN ID RESTART WITH 4L").executeUpdate();
-         setUp("운동시설");
-     }
-
      @Test
      @Transactional
      @DisplayName("카테고리 조회 테스트")
@@ -58,7 +52,7 @@
 
          if(optionalCategory.isPresent()) {
              var result = optionalCategory.get();
-             Assertions.assertEquals(result.getCategoryName(),"운동시설");
+             Assertions.assertEquals(result.getCategoryName(),"연습실");
 
              var name = "운동시설2";
              result.setCategoryName(name);

@@ -43,13 +43,6 @@
      @Autowired
      private EntityManager em;
 
- //    @BeforeEach
- //    public void init() {
- //        em.createNativeQuery("ALTER TABLE chat_room_tb ALTER COLUMN ID RESTART WITH 4L").executeUpdate();
- //
- //        setUpByChatRoom();
- //    }
-
      @Test
      @Transactional
      @DisplayName("채팅방 조회 테스트")

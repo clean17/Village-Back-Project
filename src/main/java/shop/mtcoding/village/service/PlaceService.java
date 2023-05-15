@@ -216,8 +216,7 @@ public class PlaceService {
 
             for (FileSaveDTO.FileSaveDto files : placeUpdateRequest.getFile()) {
                 String imgPath = s3Service.upload(files.getFileName(), Base64Decoded.convertBase64ToMultipartFile(files.getFileUrl()));
-                files.setFileUrl(imgPath);
-
+                files.setFileUrl(imgPath + ".jpg");
                 System.out.println("디버그 : " + imgPath);
 
                 File save = fileRepository.save(files.toEntity(files.getFileName(), files.getFileUrl(), place));

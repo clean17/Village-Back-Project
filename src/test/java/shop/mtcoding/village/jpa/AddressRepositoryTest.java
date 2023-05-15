@@ -47,7 +47,7 @@
          Assertions.assertNotEquals(addresses.size(), 0);
 
          PlaceAddress address = addresses.get(0);
-         assertEquals(address.getAddress().toLowerCase(), "부산 부산진구 중앙대로 688 한준빌딩 2층".toLowerCase());
+         assertEquals(address.getAddress().toLowerCase(), "부산광역시 부산진구 부전동 227-18".toLowerCase());
      }
 
      @Test
